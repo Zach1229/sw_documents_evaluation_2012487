@@ -24,12 +24,12 @@ CREATE TABLE public.taches (
     description VARCHAR(500),
     date_debut DATE,
     date_echeance DATE,
-    complete BOOLEAN
+    complete SMALLINT CHECK (complete >= 0 AND complete <= 1)
 );
 
 CREATE TABLE public.sous_taches (
     id SERIAL PRIMARY KEY,
     tache_id INT REFERENCES taches(id),
     titre VARCHAR(100),
-    complete BOOLEAN
+    complete SMALLINT CHECK (complete >= 0 AND complete <= 1)
 );
