@@ -1,0 +1,384 @@
+{
+	"info": {
+		"_postman_id": "fa8af42a-ac8d-4d2f-8724-9566eff99b08",
+		"name": "sw_épreuvefinale_2012487",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39991728"
+	},
+	"item": [
+		{
+			"name": "Afficher la liste de toutes les tâches de l’usager. ",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api HkQ-/zlmymA-S/jUHLYzF9+zl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/liste?tous=oui",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"liste"
+					],
+					"query": [
+						{
+							"key": "tous",
+							"value": "oui"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Afficher le détail d’une tâche",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api ksQY8FehlDfcoN9CXz6h2G/r9AwphX",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ajouter une tâche",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api HkQ-/zlmymA-S/jUHLYzF9+zl",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"Faire les courses\",\r\n  \"description\": \"Acheter du lait, du pain, et des fruits\",\r\n  \"date_debut\": \"2025-05-18\",\r\n  \"date_echeance\": \"2025-05-20\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/taches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"taches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modifier une tâche",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api ksQY8FehlDfcoN9CXz6h2G/r9AwphX",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"Faire les courses\",\r\n  \"description\": \"Acheter du lait, du pain, et des fruits\",\r\n  \"date_debut\": \"2025-05-18\",\r\n  \"date_echeance\": \"2025-05-20\",\r\n  \"complete\": \"oui\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/modifier/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"modifier",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modifier le statut d'une tâche.",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api ksQY8FehlDfcoN9CXz6h2G/r9AwphX",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/5/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"5",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Supprimer une tâche",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api ksQY8FehlDfcoN9CXz6h2G/r9AwphX",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ajouter une sous-tâche",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api ksQY8FehlDfcoN9CXz6h2G/r9AwphX",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"Passer chez Rona voir Mike\",\r\n  \"tache_titre\": \"Faire les courses\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/soustaches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"soustaches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modifier une sous-tâche",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api ksQY8FehlDfcoN9CXz6h2G/r9AwphX",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"Passer chez Rona voir Mike 2\",\r\n  \"complete\": \"Oui\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/modifier/soustache/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"modifier",
+						"soustache",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modifier le statut d'une sous-tâche",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api ksQY8FehlDfcoN9CXz6h2G/r9AwphX",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/soustache/2/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"soustache",
+						"2",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Supprimer une sous-tâche",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api ksQY8FehlDfcoN9CXz6h2G/r9AwphX",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/soustache/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"soustache",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Créer un utilisateur",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"prenom\": \"Zacharie\",\r\n  \"nom\": \"Nolet\",\r\n  \"courriel\": \"2012487@carrefour.cegepvicto.ca\",\r\n  \"mot_de_passe\": \"2012487\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/utilisateur",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"utilisateur"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Récuperer une clé api ou en générer une nouvelle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"courriel\": \"zacharie_nolet@hotmail.fr\",\r\n  \"mot_de_passe\": \"2012487\",\r\n  \"nouvelle_cle\": \"non\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/utilisateur/cle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"utilisateur",
+						"cle"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
